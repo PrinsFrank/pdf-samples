@@ -4,6 +4,3 @@ composer.lock
 
 # IDE
 .idea
-
-# Cache folder
-/cache
