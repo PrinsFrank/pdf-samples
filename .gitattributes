@@ -5,3 +5,7 @@
 /.github            export-ignore
 /.gitattributes     export-ignore
 /.gitignore         export-ignore
+
+# Don't apply CRLF conversion to PDF files, regardless of
+# user settings including "core.autocrlf".
+*.pdf -text

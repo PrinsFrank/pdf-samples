@@ -1,6 +1,6 @@
 {
     "name": "prinsfrank/pdf-samples",
-    "description": "A collection of samples to use for testing conforming readers",
+    "description": "A collection of files to use for testing conforming readers",
     "type": "library",
     "license": "MIT"
 }

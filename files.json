@@ -1,0 +1,72 @@
+[
+    {
+        "filename": "gdrive-hello-world-simple.pdf",
+        "password": null,
+        "version": "1.4",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "libreoffice-hello-world-hybrid.pdf",
+        "password": null,
+        "version": "1.7",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "libreoffice-hello-world-open-password-hello.pdf",
+        "password": "hello",
+        "version": "1.7",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "libreoffice-hello-world-simple.pdf",
+        "password": null,
+        "version": "1.7",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "libreoffice-hello-world-watermarked.pdf",
+        "password": null,
+        "version": "1.7",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "pdftex-hello-world-simple.pdf",
+        "password": null,
+        "version": "1.5",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    },
+    {
+        "filename": "word-365-hello-world-simple.pdf",
+        "password": null,
+        "version": "1.7",
+        "pages": [
+            {
+                "content": "Hello world"
+            }
+        ]
+    }
+]
