@@ -3,6 +3,12 @@
         "filename": "gdrive-hello-world-simple.pdf",
         "password": null,
         "version": "1.4",
+        "title": "Untitled document",
+        "producer": "Skia/PDF m133 Google Docs Renderer",
+        "author": null,
+        "creator": null,
+        "creationDate": null,
+        "modificationDate": null,
         "pages": [
             {
                 "content": "Hello world"
@@ -13,6 +19,12 @@
         "filename": "libreoffice-hello-world-hybrid.pdf",
         "password": null,
         "version": "1.7",
+        "title": null,
+        "producer": "LibreOffice 24.2",
+        "author": null,
+        "creator": "Writer",
+        "creationDate": "2024-11-22T22:23:57+01:00",
+        "modificationDate": null,
         "pages": [
             {
                 "content": "Hello world"
@@ -23,6 +35,12 @@
         "filename": "libreoffice-hello-world-open-password-hello.pdf",
         "password": "hello",
         "version": "1.7",
+        "title": null,
+        "producer": null,
+        "author": null,
+        "creator": null,
+        "creationDate": null,
+        "modificationDate": null,
         "pages": [
             {
                 "content": "Hello world"
@@ -33,6 +51,12 @@
         "filename": "libreoffice-hello-world-simple.pdf",
         "password": null,
         "version": "1.7",
+        "title": null,
+        "producer": "LibreOffice 24.2",
+        "author": null,
+        "creator": "Writer",
+        "creationDate": "2024-11-22T22:23:15+01:00",
+        "modificationDate": null,
         "pages": [
             {
                 "content": "Hello world"
@@ -43,6 +67,12 @@
         "filename": "libreoffice-hello-world-watermarked.pdf",
         "password": null,
         "version": "1.7",
+        "title": null,
+        "producer": "LibreOffice 24.2",
+        "author": null,
+        "creator": "Writer",
+        "creationDate": "2024-11-22T22:23:36+01:00",
+        "modificationDate": null,
         "pages": [
             {
                 "content": "Hello world"
@@ -53,6 +83,12 @@
         "filename": "pdftex-hello-world-simple.pdf",
         "password": null,
         "version": "1.5",
+        "title": null,
+        "producer": "pdfTeX-1.40.25",
+        "author": null,
+        "creator": "TeX",
+        "creationDate": "2024-11-22T22:53:31+01:00",
+        "modificationDate": "2024-11-22T22:53:31+01:00",
         "pages": [
             {
                 "content": "Hello world 1"
@@ -63,6 +99,12 @@
         "filename": "word-365-hello-world-simple.pdf",
         "password": null,
         "version": "1.7",
+        "title": null,
+        "producer": null,
+        "author": "Frank Prins",
+        "creator": "Microsoft Word",
+        "creationDate": "2024-11-22T13:35:52-08:00",
+        "modificationDate": "2024-11-22T13:35:52-08:00",
         "pages": [
             {
                 "content": "Hello world"
