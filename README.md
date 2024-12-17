@@ -8,12 +8,18 @@ To compare parsed results with actual information from these files, there is a `
 
 ### File
 
-| key      | value                        | Type          |
-|----------|------------------------------|---------------|
-| filename | The path to the file         | string        |
-| password | Password to open the file    | string \|null |
-| version  | PDF version                  | string        |
-| pages    | An array of page information | object        |
+| key              | value                        | Type          |
+|------------------|------------------------------|---------------|
+| filename         | The path to the file         | string        |
+| password         | Password to open the file    | string \|null |
+| version          | PDF version                  | string        |
+| title            | Title                        | string \|null |
+| producer         | Producer                     | string \|null |
+| author           | Author                       | string \|null |
+| creator          | Creator                      | string \|null |
+| creationDate     | Creation date                | string \|null |
+| modificationDate | Modification date            | string \|null |
+| pages            | An array of page information | object        |
 
 ### Page
 
