@@ -33,7 +33,13 @@ class SampleProvider {
                         $content->creator,
                         $content->creationDate,
                         $content->modificationDate,
-                        array_map(fn($page) => new Page($page->content), $content->pages),
+                        array_map(
+                            fn(object $page) => new Page(
+                                $page->content,
+                                array_map(fn (string $relativePath) => sprintf('%s/images/%s', $sampleFolder, $relativePath), $page->images ?? [])
+                            ),
+                            $content->pages
+                        ),
                     )
                 ];
             }
