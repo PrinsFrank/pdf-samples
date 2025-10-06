@@ -1,7 +1,6 @@
 #!/usr/bin/env php
 <?php declare(strict_types=1);
 
-use PrinsFrank\PdfParser\Document\Object\Decorator\Page;
 use PrinsFrank\PdfParser\PdfParser;
 use Symfony\Component\Yaml\Yaml;
 
@@ -20,6 +19,19 @@ foreach (array_diff(scandir($filesDir = __DIR__ . '/files'), ['..', '.']) as $cr
         }
 
         $parsedPDF = (new PdfParser())->parseFile($pdfPath);
+        $pages = [];
+        foreach ($parsedPDF->getPages() as $pageIndex => $page) {
+            $pages[$pageIndex] = [
+                'content' => $page->getText(),
+            ];
+
+            foreach ($page->getImages() as $imageIndex => $image) {
+                $fileName = sprintf('page_%d_image_%d.%s', $pageIndex, $imageIndex, $image->getImageType()->getFileExtension());
+                file_put_contents(sprintf('%s/images/%s', $sampleFolder, $fileName), $image->getContent()->toString());
+                $pages[$pageIndex]['images'][] = $fileName;
+            }
+        }
+
         $yamlContent = Yaml::dump(
             [
                 'version' => $parsedPDF->version->value,
@@ -30,9 +42,7 @@ foreach (array_diff(scandir($filesDir = __DIR__ . '/files'), ['..', '.']) as $cr
                 'creator' => $parsedPDF->getInformationDictionary()?->getCreator(),
                 'creationDate' => $parsedPDF->getInformationDictionary()?->getCreationDate(),
                 'modificationDate' => $parsedPDF->getInformationDictionary()?->getModificationDate(),
-                'pages' => array_map(fn (Page $page): array => [
-                    'content' => $page->getText(),
-                ], $parsedPDF->getPages()),
+                'pages' => $pages,
             ],
             flags: Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK
         );
