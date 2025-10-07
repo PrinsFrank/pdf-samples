@@ -11,5 +11,8 @@
         "psr-4": {
             "PrinsFrank\\PdfSamples\\": "src/"
         }
+    },
+    "require-dev": {
+        "prinsfrank/pdfparser": "^2.5"
     }
 }
