@@ -2,5 +2,14 @@
     "name": "prinsfrank/pdf-samples",
     "description": "A collection of files to use for testing conforming readers",
     "type": "library",
-    "license": "MIT"
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "symfony/yaml": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "PrinsFrank\\PdfSamples\\": "src/"
+        }
+    }
 }
