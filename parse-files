@@ -1,0 +1,45 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+use PrinsFrank\PdfParser\Document\Object\Decorator\Page;
+use PrinsFrank\PdfParser\PdfParser;
+use Symfony\Component\Yaml\Yaml;
+
+require __DIR__ . '/vendor/autoload.php';
+
+foreach (array_diff(scandir($filesDir = __DIR__ . '/files'), ['..', '.']) as $creator) {
+    $creatorFolder = $filesDir . DIRECTORY_SEPARATOR . $creator;
+    foreach (array_diff(scandir($creatorFolder), ['..', '.']) as $sample) {
+        $sampleFolder = $creatorFolder . DIRECTORY_SEPARATOR . $sample;
+        if (!file_exists($pdfPath = $sampleFolder . DIRECTORY_SEPARATOR . 'file.pdf')) {
+            throw new RuntimeException();
+        }
+
+        if (file_exists($contentsPath = $sampleFolder . DIRECTORY_SEPARATOR . 'contents.yml')) {
+            continue;
+        }
+
+        $parsedPDF = (new PdfParser())->parseFile($pdfPath);
+        $yamlContent = Yaml::dump(
+            [
+                'version' => $parsedPDF->version->value,
+                'password' => null,
+                'title' => $parsedPDF->getInformationDictionary()?->getTitle(),
+                'producer' => $parsedPDF->getInformationDictionary()?->getProducer(),
+                'author' => $parsedPDF->getInformationDictionary()?->getAuthor(),
+                'creator' => $parsedPDF->getInformationDictionary()?->getCreator(),
+                'creationDate' => $parsedPDF->getInformationDictionary()?->getCreationDate(),
+                'modificationDate' => $parsedPDF->getInformationDictionary()?->getModificationDate(),
+                'pages' => array_map(fn (Page $page): array => [
+                    'content' => $page->getText(),
+                ], $parsedPDF->getPages()),
+            ],
+            flags: Yaml::DUMP_MULTI_LINE_LITERAL_BLOCK
+        );
+
+        file_put_contents(
+            $contentsPath,
+            '# yaml-language-server: $schema=./.yml-schema.json' . PHP_EOL . $yamlContent
+        );
+    }
+}
