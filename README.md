@@ -1,28 +1,27 @@
 # PDF samples
 
-A collection of samples to use for testing conforming readers
+This repository is a collection of PDF files together with structured data about their contents in YAML form.
 
-## Metadata about these files
+## Objective of this repository
 
-To compare parsed results with actual information from these files, there is a `files.json` included in this repository. It has an array for each file, that contains information about the documents.
+The objective of this repository is two-fold:
 
-### File
+- Provide a variety of PDF files by different generators for testing/benchmarking purposes.
+- Provide structured data about the contents of those files to test output of conforming parsers.
 
-| key              | value                        | Type          |
-|------------------|------------------------------|---------------|
-| filename         | The path to the file         | string        |
-| password         | Password to open the file    | string \|null |
-| version          | PDF version                  | string        |
-| title            | Title                        | string \|null |
-| producer         | Producer                     | string \|null |
-| author           | Author                       | string \|null |
-| creator          | Creator                      | string \|null |
-| creationDate     | Creation date                | string \|null |
-| modificationDate | Modification date            | string \|null |
-| pages            | An array of page information | object        |
+## File organization
 
-### Page
+The samples are organized in subdirectories by generator as follows:
 
-| key     | value                | Type   |
-|---------|----------------------|--------|
-| content | text content of page | string |
+- `generator-name`
+  - `sample-description`
+    - `file.pdf`
+    - `contents.yml`
+    - `images` (optional)
+      - `page_0_image_0.png` (page number and index of image on page, file extension based on image type)
+
+### Contents.yml
+
+The contents.yml file contains structured data about the contents of the PDF file. The schema is defined in `yml-schema.json` in the root of this repository.
+
+Properties can be added but not removed or renamed between minor versions to preserve BC.
