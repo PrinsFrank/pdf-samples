@@ -5,7 +5,7 @@ namespace PrinsFrank\PdfSamples;
 use DateTimeImmutable;
 
 class FileInfo {
-    /** @param array<Page> $pages */
+    /** @param list<Page> $pages */
     public function __construct(
         public readonly string $pdfPath,
         public readonly int $version,
