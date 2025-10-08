@@ -22,6 +22,6 @@ The samples are organized in subdirectories by generator as follows:
 
 ### Contents.yml
 
-The contents.yml file contains structured data about the contents of the PDF file. The schema is defined in `yml-schema.json` in the root of this repository.
+The contents.yml file contains structured data about the contents of the PDF file. The schema is defined in `schema.json` in the root of this repository.
 
 Properties can be added but not removed or renamed between minor versions to preserve BC.
