@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=./.yml-schema.json
+version: 1.7
+password: null
+title: Bekanntgabe von Verleihungen des Verdienstordens der Bundesrepublik Deutschland
+producer: unkonwn
+author: bundesanzeiger.de
+creator: unkonwn
+creationDate: 2025-10-09T14:57:00+01:00
+modificationDate: 2025-10-09T14:57:00+01:00
+pages:
+  -
+    content: |-1
+      Frühwald
