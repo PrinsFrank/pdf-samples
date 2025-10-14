@@ -26,8 +26,13 @@ foreach (array_diff(scandir($filesDir = __DIR__ . '/files'), ['..', '.']) as $cr
             ];
 
             foreach ($page->getImages() as $imageIndex => $image) {
+                $imageFolder = $sampleFolder . DIRECTORY_SEPARATOR . 'images';
+                if (!is_dir($imageFolder) && !mkdir($imageFolder, 0777, true) && !is_dir($imageFolder)) {
+                    throw new RuntimeException(sprintf('Directory "%s" was not created', $imageFolder));
+                }
+
                 $fileName = sprintf('page_%d_image_%d.%s', $pageIndex, $imageIndex, $image->getImageType()->getFileExtension());
-                file_put_contents(sprintf('%s/images/%s', $sampleFolder, $fileName), $image->getContent()->toString());
+                file_put_contents(sprintf('%s/%s', $imageFolder, $fileName), $image->getContent()->toString());
                 $pages[$pageIndex]['images'][] = $fileName;
             }
         }
