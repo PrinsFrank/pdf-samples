@@ -1,5 +1,7 @@
 # PDF samples
 
+> :warning: **This repository is archived. Samples now live in the [pdfparser library itself](https://github.com/prinsfrank/pdfparser) :warning:
+
 This repository is a collection of PDF files together with structured data about their contents in YAML form.
 
 ## Objective of this repository
